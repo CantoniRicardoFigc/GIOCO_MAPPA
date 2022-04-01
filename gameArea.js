@@ -2,6 +2,7 @@ import Levels from "./levels.js";
 import Lvl from "./lvl.js";
 
 export default class GameArea {
+  
     constructor() {
       this.level = new Levels(
         40,
@@ -30,4 +31,5 @@ export default class GameArea {
       this.clear();
       this.level.draw(this.context);
     };
+
   }
