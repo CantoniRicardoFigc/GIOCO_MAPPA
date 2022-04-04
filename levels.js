@@ -1,3 +1,5 @@
+import RawObject from "./rawObject.js";
+
 export default class Levels {
 
     level_width; 
@@ -10,6 +12,7 @@ export default class Levels {
     tileMapImage 
     tileMapImgHeight; 
     tileMapImageWidth;
+    obstaclesVector = [];
     constructor(level_width, level_height, tile_width, tile_height, water, path, obstacles, tileMapsrc, tileMapImgHeight, tileMapImageWidth) {
         this.level_width = level_width;
         this.level_height = level_height;
@@ -22,6 +25,7 @@ export default class Levels {
         this.tileMapImage.src = tileMapsrc;
         this.tileMapImgHeight = tileMapImgHeight;
         this.tileMapImageWidth = tileMapImageWidth;
+        this.pushLayerObstacleVector(water, tile_width, tile_height);
     }
 
     draw(canvasContext) {
@@ -48,6 +52,20 @@ export default class Levels {
             }
             
         }
+    }
+
+    pushLayerObstacleVector(layerMap, tile_width, tile_height)
+    {
+      for (let i = 0; i < layerMap.length; i++) {
+        if(layerMap[i] != 0)
+        {
+            let dx = (i % this.level_width) * 32;
+            let dy = Math.floor(i / this.level_height) * 32;
+            
+            let obstacle = new RawObject(dx, dy, tile_width, tile_height)
+            this.obstaclesVector.push(obstacle);
+        }
+      }
     }
 
 }

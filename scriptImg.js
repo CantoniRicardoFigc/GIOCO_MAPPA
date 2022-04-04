@@ -1,12 +1,14 @@
-var running = [
-    "Run__000.png",
-    "Run__001.png",
-    "Run__002.png",
-    "Run__003.png",
-    "Run__004.png",
-    "Run__005.png",
-    "Run__006.png",
-    "Run__007.png",
-    "Run__008.png",
-    "Run__009.png"
-]
+export default class NinjaSprites {
+    static running = [
+        "./img/Run__000.png",
+        "./img/Run__001.png",
+        "./img/Run__002.png",
+        "./img/Run__003.png",
+        "./img/Run__004.png",
+        "./img/Run__005.png",
+        "./img/Run__006.png",
+        "./img/Run__007.png",
+        "./img/Run__008.png",
+        "./img/Run__009.png"
+    ]
+}
