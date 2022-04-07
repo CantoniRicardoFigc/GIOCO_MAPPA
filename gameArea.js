@@ -38,7 +38,7 @@ export default class GameArea {
   
     updateGameArea = () => {
       this.clear();
-      this.level.draw(this.context);
+      this.level.draw(this.context, this.ninja.x, this.ninja.y);
       this.ninja.update(this.obstaclesVector)
       this.ninja.draw(this.context)
     };

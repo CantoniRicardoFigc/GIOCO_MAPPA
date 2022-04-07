@@ -27,6 +27,7 @@ export default class Levels {
         this.tileMapImageWidth = tileMapImageWidth;
         this.pushLayerObstacleVector(water, tile_width, tile_height);
         this.pushLayerObstacleVector(obstacles, tile_width, tile_height);
+
     }
 
     draw(canvasContext) {
@@ -37,7 +38,7 @@ export default class Levels {
 
     }
 
-    drawLayer(layerMap, canvasContext) {
+    drawLayer(layerMap, canvasContext, ox, oy) {
         
         for (let i = 0; i < layerMap.length; i++) {
            
