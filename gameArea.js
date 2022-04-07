@@ -6,7 +6,7 @@ import AnimatedObject from "./animatedObject.js";
 export default class GameArea {
   
     constructor() {
-      this.ninja = new AnimatedObject(NinjaSprites.running, 60, 60, 10, 150);
+      this.ninja = new AnimatedObject(NinjaSprites.running, 60, 60, 880, 880);
       this.ninja.loadImages(NinjaSprites.running);
       this.vet = [];
       this.level = new Levels(
@@ -22,8 +22,8 @@ export default class GameArea {
         512
       );
       this.canvas = document.getElementById("gameArea");
-      this.canvas.width = 1280;
-      this.canvas.height = 1280;
+      this.canvas.width = 450;
+      this.canvas.height = 450;
       this.context = this.canvas.getContext("2d");
       this.interval = setInterval(this.updateGameArea, 20); 
       document.addEventListener("keydown", this.move);
@@ -38,7 +38,7 @@ export default class GameArea {
   
     updateGameArea = () => {
       this.clear();
-      this.level.draw(this.context, this.ninja.x, this.ninja.y);
+      this.level.draw(this.context, this.ninja.x-this.canvas.width/2, this.ninja.y-this.canvas.height/2);
       this.ninja.update(this.obstaclesVector)
       this.ninja.draw(this.context)
     };

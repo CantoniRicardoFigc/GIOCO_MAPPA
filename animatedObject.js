@@ -31,6 +31,7 @@ export default class AnimatedObject {
           collision = this.crashWith(object);
           
         }
+
       }
   
       if (!collision) {
@@ -84,6 +85,6 @@ export default class AnimatedObject {
     }
 
     draw(context) {
-        context.drawImage(this.image, this.x, this.y, this.width, this.height);
+        context.drawImage(this.image, 200, 200, this.width, this.height);
     }
   }

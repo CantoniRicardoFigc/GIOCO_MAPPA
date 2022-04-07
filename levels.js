@@ -30,11 +30,11 @@ export default class Levels {
 
     }
 
-    draw(canvasContext) {
+    draw(canvasContext,ox, oy) {
 
-       this.drawLayer(this.water, canvasContext);
-       this.drawLayer(this.path, canvasContext);
-       this.drawLayer(this.obstacles, canvasContext);
+       this.drawLayer(this.water, canvasContext,ox, oy);
+       this.drawLayer(this.path, canvasContext,ox, oy);
+       this.drawLayer(this.obstacles, canvasContext,ox, oy);
 
     }
 
@@ -50,7 +50,7 @@ export default class Levels {
             let sy = Math.floor(tile / (this.tileMapImgHeight/32)) * 32;
 
             if (tile != 0) {
-                canvasContext.drawImage(this.tileMapImage, sx, sy, this.tile_width, this.tile_height, dx, dy, this.tile_width, this.tile_height);
+                canvasContext.drawImage(this.tileMapImage, sx, sy, this.tile_width, this.tile_height, dx-ox, dy-oy, this.tile_width, this.tile_height);
             }
             
         }
