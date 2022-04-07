@@ -22,12 +22,14 @@ export default class AnimatedObject {
     update(obstacleVector) {
       this.tryY = this.y + this.speedY;
       this.tryX = this.x + this.speedX;
-  
+
       let collision = false;
   
       for (let object of obstacleVector) {
+        
         if (collision == false) {
           collision = this.crashWith(object);
+          
         }
       }
   
@@ -55,7 +57,7 @@ export default class AnimatedObject {
       var otherbottom = otherobj.y + otherobj.height;
       var crash = true;
   
-      if (mytop < 0 || mybottom > 270 || myleft < 0 || myright > 480) {
+      if (mytop < 0 || mybottom > 1280 || myleft < 0 || myright > 1280) {
         return true;
       }
 

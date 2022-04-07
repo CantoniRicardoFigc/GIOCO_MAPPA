@@ -26,6 +26,7 @@ export default class Levels {
         this.tileMapImgHeight = tileMapImgHeight;
         this.tileMapImageWidth = tileMapImageWidth;
         this.pushLayerObstacleVector(water, tile_width, tile_height);
+        this.pushLayerObstacleVector(obstacles, tile_width, tile_height);
     }
 
     draw(canvasContext) {

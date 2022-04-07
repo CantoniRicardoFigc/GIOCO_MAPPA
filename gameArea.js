@@ -28,8 +28,9 @@ export default class GameArea {
       this.interval = setInterval(this.updateGameArea, 20); 
       document.addEventListener("keydown", this.move);
       document.addEventListener("keyup", this.clearmove);
-      this.obstaclesVector = this.level.obstaclesVector;
-    }
+      this.obstaclesVector= this.level.obstaclesVector;
+      console.log(this.obstaclesVector)
+      }
   
     clear = () => {
       this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -38,7 +39,6 @@ export default class GameArea {
     updateGameArea = () => {
       this.clear();
       this.level.draw(this.context);
-      this.obstaclesVector=[];
       this.ninja.update(this.obstaclesVector)
       this.ninja.draw(this.context)
     };
