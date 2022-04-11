@@ -3,8 +3,8 @@ export default class AnimatedObject {
     speedY = 0;
     width = 60;
     height = 60;
-    x = 100;
-    y = 100;
+    x = 10;
+    y = 120;
     imageList = [];
     contaFrame = 0;
     actualFrame = 0;
@@ -29,12 +29,12 @@ export default class AnimatedObject {
         
         if (collision == false) {
           collision = this.crashWith(object);
-          
+
         }
 
       }
 
-      collision = false;
+      //collision = false;
   
       if (!collision) {
         this.x = this.tryX;
@@ -60,7 +60,7 @@ export default class AnimatedObject {
       var otherbottom = otherobj.y + otherobj.height;
       var crash = true;
   
-      if (mytop < 0 || mybottom > 1280 || myleft < 0 || myright > 1280) {
+      if (mytop < 0 || mybottom > 1888 || myleft < 0 || myright > 1664) {
         return true;
       }
 

@@ -6,12 +6,12 @@ import AnimatedObject from "./animatedObject.js";
 export default class GameArea {
   
     constructor() {
-      this.ninja = new AnimatedObject(NinjaSprites.running, 60, 60, 880, 880);
+      this.ninja = new AnimatedObject(NinjaSprites.running, 60, 60, 570, 780);
       this.ninja.loadImages(NinjaSprites.running);
       this.vet = [];
       this.level = new Levels(
-        56,
-        51,
+        59,
+        52,
         32,
         32,
         Lvl.water,
@@ -23,8 +23,8 @@ export default class GameArea {
         512
       );
       this.canvas = document.getElementById("gameArea");
-      this.canvas.width = 1000;
-      this.canvas.height = 1000;
+      this.canvas.width = 400;
+      this.canvas.height =400;
       this.context = this.canvas.getContext("2d");
       this.interval = setInterval(this.updateGameArea, 20); 
       document.addEventListener("keydown", this.move);
@@ -39,7 +39,7 @@ export default class GameArea {
   
     updateGameArea = () => {
       this.clear();
-      this.level.draw(this.context, this.ninja.x-this.canvas.width/2, this.ninja.y-this.canvas.height/2);
+      this.level.draw(this.context, this.ninja.x-(this.canvas.width-180), this.ninja.y-(this.canvas.height-150));
       this.ninja.update(this.obstaclesVector)
       this.ninja.draw(this.context)
     };
@@ -79,5 +79,11 @@ export default class GameArea {
       //this.ninja.speedX = 0;
       //this.ninja.speedY = 0;
     };
+
+    allerte = (livelli) => {
+      if (this.ninja.x && this.ninja.y == livelli.x && livelli.y) {
+        alert('ciao');
+      }
+    }
 
   }
