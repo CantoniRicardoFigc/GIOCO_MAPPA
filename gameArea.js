@@ -10,20 +10,21 @@ export default class GameArea {
       this.ninja.loadImages(NinjaSprites.running);
       this.vet = [];
       this.level = new Levels(
-        40,
-        40,
+        56,
+        51,
         32,
         32,
         Lvl.water,
         Lvl.path,
         Lvl.obstacles,
-        "PathAndObjects.png",
+        Lvl.oggetti,
+        "Castle2.png",
         512,
         512
       );
       this.canvas = document.getElementById("gameArea");
-      this.canvas.width = 450;
-      this.canvas.height = 450;
+      this.canvas.width = 1000;
+      this.canvas.height = 1000;
       this.context = this.canvas.getContext("2d");
       this.interval = setInterval(this.updateGameArea, 20); 
       document.addEventListener("keydown", this.move);

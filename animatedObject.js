@@ -3,8 +3,8 @@ export default class AnimatedObject {
     speedY = 0;
     width = 60;
     height = 60;
-    x = 10;
-    y = 120;
+    x = 100;
+    y = 100;
     imageList = [];
     contaFrame = 0;
     actualFrame = 0;
@@ -33,6 +33,8 @@ export default class AnimatedObject {
         }
 
       }
+
+      collision = false;
   
       if (!collision) {
         this.x = this.tryX;
