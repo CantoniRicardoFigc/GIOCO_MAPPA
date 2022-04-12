@@ -27,6 +27,8 @@ export default class GameArea {
       this.canvas.height =400;
       this.context = this.canvas.getContext("2d");
       this.interval = setInterval(this.updateGameArea, 20); 
+      this.interval = setInterval(this.updateSound1, 8000);
+      this.interval = setInterval(this.updateSound2, 245000);
       document.addEventListener("keydown", this.move);
       document.addEventListener("keyup", this.clearmove);
       this.obstaclesVector= this.level.obstaclesVector;
@@ -43,6 +45,14 @@ export default class GameArea {
       this.ninja.update(this.obstaclesVector)
       this.ninja.draw(this.context)
     };
+    updateSound1 = () => {
+      var snd = new Audio("uccellini.mp3");
+      snd.play();
+    };
+    updateSound2 = () => {
+      var snd = new Audio("ruscello.mp3");
+      snd.play();
+    }
 
     move = (e) => {
       switch (e.key) {
