@@ -32,7 +32,7 @@ export default class Levels {
 
     }
 
-    draw(canvasContext,ox, oy) {
+    draw(canvasContext, ox, oy) {
 
        this.drawLayer(this.water, canvasContext,ox, oy);
        this.drawLayer(this.path, canvasContext,ox, oy);
